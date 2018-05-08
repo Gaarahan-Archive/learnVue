@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1 :class="['thin']">属性绑定的形式来为元素添加thin类,传递的值是一个数组['thin']</h1>
+    
+      <h1 :class="[(classContrl==='1')?'italic':'']">三元表达式,只有当下面的选择为1时,才会添加类'italic'</h1>
+
+      <h1 :class="[{'italic':flag}]">使用[{'类名':条件}]的方式来控制属性</h1>
+      <select v-model:value="classContrl">
+         <option value='0'> 0 </option> 
+         <option value='1'> 1 </option> 
+      </select>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

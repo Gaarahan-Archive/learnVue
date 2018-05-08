@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>vue 事件绑定</title> 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel='stylesheet' href="style.css">
+  </head>
+  <body>
+    <div id="app-vue">
+      <h1> Events </h1>  
+      <button v-on:click="age++">年龄加一</button>
+      <button v-on:click="age--">年龄减一</button>
+      <hr>
+      <button v-on:click="add">年龄加一,方法</button>
+      <button v-on:click="subtract">年龄减一,方法</button>
+      <hr>
+      <button v-on:dblclick.once="add">年龄加一,双击,这个按钮只有一次效用</button>
+      <button v-on:dblclick="subtract">年龄减一,双击</button>
+      <p>My age is {{age}}</p>
+      <div id="canvas" @mousemove='updateXY'>
+        {{x}},{{y}} - <span @mousemove="stop">Stop Moving use Javascript</span>
+
+        <p @mousemove.stop = "">Stop Moving use Vue</p>
+      </div>
+      <a @click.prevent="preventLink" href="http://www.bing.com">我是通向bing的链接,但被阻止了</a>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

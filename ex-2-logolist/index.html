@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="vue-app">
+      <div class='add-product' v-FSIZE='25' v-bold='900'>
+        <label>Id : <input v-model:value="id"></label>
+        <label>Name : <input v-model:value="name" @keyup.f2="add">(按下f2确认)</label>
+        <input type="button" value="add" @click="add">
+      </div>
+      <hr>
+        <label>Serch : <input v-model:value="sech" v-focus v-color></label>
+      <hr>
+      <table class="msg_table">
+        <tr>
+          <th>Id</td>
+          <th>Name</td>
+          <th>Ctime</td>
+          <th>Operation</td>
+        </tr>
+        <tr v-for="val in fil(sech)" :key="val.id">
+          <td>{{val.id}}</td>
+          <td>{{val.name}}</td>
+          <td>{{val.ctime | dateFormat | dateFormat2}}</td>
+          <td><a href="" @click.prevent='del(val.id)'>删除</a></td>
+        </tr>
+      </table>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

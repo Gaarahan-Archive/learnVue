@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset='UTF-8'>
+    <title>v-model 双向数据绑定</title>
+  </head>
+  <body>
+    <div id="vue-app">
+      <textarea style="font-size:20px" :value="msg" cols='50' rows="8">
+
+        </textarea>
+      <textarea style="font-size:20px" v-model:value="info" cols='50' rows="8">
+
+      </textarea>
+    </div>
+    <script src='app.js'></script>
+  </body>
+</html>

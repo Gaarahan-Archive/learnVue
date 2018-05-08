@@ -1,0 +1,15 @@
+.thin{
+  font-weight:200;
+}
+
+.red{
+  color:'red';
+}
+
+.italic{
+  font-style:italic;
+}
+
+.active{
+  letter-spacing: 0.5em;
+}

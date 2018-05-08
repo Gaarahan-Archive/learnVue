@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>vue</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>{{ greet('afternoon') }}</h1>
+      <h1>{{ name }}</h1>
+      <p>{{text}}</p>
+      <a v-bind:href="site">a link to Gaarahan's github</a>
+      <hr>
+      <input v-bind:title="num" type="button" value="这是num的实际值">
+      <input v-bind:title="num/2" type="button" value="这是num/2的值">
+      <hr>
+      <input :value = "name + '\'s input' "></input>
+      <p v-html="siteTag"></p>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

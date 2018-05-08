@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <!-- vue-resource 依赖于vue,因此需先导入vue,再导入vue-resource -->
+    <script src="vue-resource.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <input type="button" @click="getInfo" value="get请求"> 
+      <input type="button" @click="postInfo" value="post请求">
+      <input type="button" @click="jsonpInfo" value="jsonp请求">
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

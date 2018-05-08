@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>v-model 计算器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <input v-model:value="num1" type="text">
+        
+      <select v-model:value="op">
+        <option value = '+'>+</option>
+        <option value = '-'>-</option>
+        <option value = '*'>*</option>
+        <option value = '/'>/</option>
+      </select>
+
+      <input v-model:value="num2" type="text">  
+
+      <input type="button" @click="getValue" value=" = ">
+
+      <input type="text" v-bind:value="result">
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>v-for 命令的使用</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <p>v-for 循环普通数组:</p>
+      <pre>
+        [1,2,3,4,5,6,7,8]  
+      </pre>
+      <h1>RESULT:</h1>
+      <h2 v-for="val in arr">--{{val}}--</h2>
+      <p>v-for 循环对象数组:</p>
+      <pre>
+        array: {
+          name : 'gaara',
+          age : 20,
+          sex : man
+        }
+      </pre>
+      <h1>RESULT:</h1>
+      <h2 v-for="(val,key,i) in array">键:{{key}}  ----  值:{{val}}  ---  索引:{{i}}</h2>
+      <p>v-for循环数字迭代</p>
+      <pre>
+        v-for="i in 10"
+      </pre>
+      <h1>RESULT</h1>
+      <h2 v-for="i in 10"> {{i}} </h2>
+      <br>
+      <div style="width:100%;margin-bottom:500px;"> 
+        <div style="float:left;width:50%">
+          <h3>未使用key属性标识,当选中后添加复选选项,会看到选中的内容被'挤走'</h3>
+          val : <input v-model:value="val">
+          key : <input v-model:value="key">
+          <input type="button" @click="add" value="add">
+          <div v-for="val in objarr">
+            <input type="checkbox">key : {{val.id}} ----- val: {{val.name}}</input>
+          </div>
+        </div>
+        <div style="float:right;width:40%">
+          <h3>使用key属性标识<div :key="val.id">,为每个div添加目前循环变量的id作为唯一标识符,选中的内容不会被'挤走'</h3>
+          <div v-for="val in objarr" :key="val.id">
+            <input type="checkbox">key : {{val.id}} ----- val: {{val.name}}</input>
+          </div>
+        </div>
+      </div>
+    </div>
+      <script src="app.js"></script>
+  </body>
+</html>
