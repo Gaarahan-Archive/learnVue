@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="Resource/bootstrap/css/bootstrap.css" crossorigin="anonymous">
+  <script src="Resource/Vue/vue.js"></script>
+  <link rel="stylesheet" href="./myStyleSheet.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="curBar col-lg-10 col-lg-offset-1 ">
+      <span class="curBar-title row">实时天气：{{cityName}} <span class="curBar-time">更新时间：{{updateTime}}</span></span>
+      <div class="curBar-data row">
+        <div class="curBar-tem h1 col-lg-2 col-lg-offset-1">{{curTem}}°C</div>
+        <div class="curBar-content col-lg-offset-4 row">
+          <div class="curData-1 col-lg-3">
+            <div class="curData-title">风向</div>
+            <div class="curData-context">{{curWind_D}}</div>
+          </div>
+          <div class="curData-2 col-lg-3">
+            <div class="curData-title">风力</div>
+            <div class="curData-context">{{curWind_S}}</div>
+          </div>
+          <div class="curData-3 col-lg-3">
+            <div class="curData-title">湿度</div>
+            <div class="curData-context">{{curHumi}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Resource/jquery/jquery-3.3.1.min.js"></script>
+  <script src="Resource/bootstrap/js/bootstrap.js"></script>
+
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        cityName:'扶风',
+        updateTime:'21:00',
+        curTem:'21',
+        curWind_D:'东风',
+        curWind_S:'2级',
+        curHumi:'4%'
+      }
+    });
+  </script>
+</body>
+</html>
