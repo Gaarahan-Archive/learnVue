@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-model="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Weather App</title>
   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="Resource/bootstrap/css/bootstrap.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="Resource/bootstrap/css/bootstrap.css">
   <script src="Resource/Vue/vue.js"></script>
 </head>
 <body>
 <div class="container-fluid" id="app">
   <h3 class="text-center">Gaara's Weather App</h3>
-  <form action="" class="col-lg-8 col-lg-offset-3">
-    <input class="col-lg-7" type="text" v-model:value="city" placeholder="请输入查询城市">
-    <input class="col-lg-2 btn btn-primary" type="submit" value="submit" @click.prevent="begin()">
+  <form action="" class="col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-3">
+    <input class="col-sm-6 col-md-6" type="text" v-model="city" placeholder="请输入查询城市">
+    <input class="col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1 btn btn-primary" type="submit" value="submit" @click.prevent="begin">
   </form>
 
   <!--获取到的数据-->
   <div id="body" v-if="showBody">
-{
   </div>
 </div>
 <!-- jQuery -->
@@ -25,8 +24,6 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="Resource/bootstrap/js/bootstrap.js"></script>
 <script>
-  let serverUrl = 'http://localhost:8080/';
-  let vueThis ;
   let vm = new Vue({
     el: "#app",
     data: {
@@ -35,31 +32,10 @@
     },
     methods: {
       begin() {
-        let script = document.createElement("script");
-        script.src = "http://localhost:8080/" + "?cityname=" + this.city;
-        document.body.insertBefore(script, document.body.firstChild);
-        vueThis = this;
+        let dataSrc = "http://localhost:8080/" + "?cityname=" + this.city;
       }
     }
   });
-
-  function resolveData(data){
-    let result = data['result'];
-    console.log(data);
-    if(data['resultcode'] === "200"){
-      //为需要的信息赋值
-
-
-      // 显示信息元素
-      vueThis.showBody = true;
-    }
-    else{
-      let error = new Error(`请求失败，状态码为${data['resultcode']}`);
-      console.error(error.message);
-      return null;
-    }
-  }
-
 </script>
 </body>
 </html>

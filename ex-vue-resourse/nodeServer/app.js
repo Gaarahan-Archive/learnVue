@@ -2,7 +2,7 @@
 const http = require('http');
 
 //这个模块解析URL地址,从而拿到 pathname query
-const urlModule = reqire('url');
+const urlModule = require('url');
 
 //创建一个http服务器
 const server = http.createServer();
