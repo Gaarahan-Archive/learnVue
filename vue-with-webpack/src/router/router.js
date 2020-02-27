@@ -12,8 +12,8 @@ export const router = new VueRouter({
       path : '/login',
       component : login ,
       children : [
-        {path : 'login-title', component : loginTitle},
-        {path : 'login-body', component : loginBody},
+        { path : 'login-title', component : loginTitle},
+        { path : 'login-body', component : loginBody},
       ]
     },
     { path : '/register', component : register },

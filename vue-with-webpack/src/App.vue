@@ -14,6 +14,7 @@
 </style>
 
 <script>
+  import {Indicator} from "mint-ui";
   export default{
     data(){
       return {
@@ -24,6 +25,15 @@
       show(){
         alert('show !!');
       }
+    },
+    beforeMount() {
+      Indicator.open({
+        text : '正在加载',
+        spinnerType : 'double-bounce'
+      });
+    },
+    mounted() {
+      Indicator.close();
     }
   }
 </script>
